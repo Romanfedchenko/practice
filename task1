@@ -1,0 +1,49 @@
+![work](https://user-images.githubusercontent.com/43368065/124328677-c4e54500-db92-11eb-961d-900dea61eb73.png)
+
+line = input('Give me line to work: ')
+
+lineSplit = line.split()
+
+i = 0
+while(i < len(lineSplit)):
+if lineSplit[i].isdecimal():
+numbers.append(int(lineSplit.pop(i)))
+continue
+digits = ''.join(filter(lambda i: i.isdecimal(), lineSplit[i]))
+if digits:
+numbers.append(int(digits))
+lineSplit[i] = ''.join(filter(lambda i: not i.isdecimal(), lineSplit[i]))
+i += 1
+if lineSplit[i].isdecimal():
+numbers.append(int(lineSplit.pop(i)))
+
+digits = ''.join(filter(lambda i: i.isdecimal(), lineSplit[i]))
+if digits:
+numbers.append(int(digits))
+lineSplit[i] = ''.join(filter(lambda i: not i.isdecimal(), lineSplit[i]))
+
+
+''.join()
+
+
+for i in range(len(lineSplit)):
+lineSplit[i] = lineSplit[i].title()[:-1] + lineSplit[i][-1].upper()
+lineSplit = list(map(lambda item: item.title()[:-1] + item[-1].upper(),lineSplit))
+if numbers:
+maxNumber = max(numbers)
+numbersPowered = list(map(lambda x: x ** numbers.index(x) if x != maxNumber else x, numbers))
+
+lineEdited = ' '.join(lineSplit)
+
+print('', f'Line: {line}', '',
+f'line after edit: {lineEdited}', '', sep="\n")
+
+if numbers:
+print(f'gotten numbers: {numbers}', '',
+f'maximum number: {maxNumber}', '',
+f'numbers after powering: {numbersPowered}', sep="\n")
+```
+
+
+![git-commit-in-console](https://user-images.githubusercontent.com/43368065/124328691-ca428f80-db92-11eb-98ba-82027db5751a.png)
+
